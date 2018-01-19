@@ -52,7 +52,7 @@ head(steps)
 
 ```{r}
 hist1 <- ggplot(data = na.omit(steps), aes(Total)) + 
-    geom_histogram(binwidth = 1500, colour = "red") +
+    geom_histogram(binwidth = 1000, colour = "red", fill = "blue") +
     xlab("Total Number of Steps Taken Each Day") +
     ylab("Count") +
     ggtitle("Total Number of Steps Taken Each Day")
@@ -143,7 +143,7 @@ new_steps <- aggregate(newdataset$steps, by = list(newdataset$date), FUN = sum)
 names(new_steps)[names(new_steps) == "x"] <- "Total"
 names(new_steps)[names(new_steps) == "Group.1"] <- "Date"
 hist2 <- ggplot(data = new_steps, aes(Total)) + 
-  geom_histogram(binwidth = 1500, colour = "red")+
+  geom_histogram(binwidth = 1000, colour = "red" , fill = "blue")+
     xlab("Total Number of Steps Taken Each Day") +
     ylab("Count") +
     ggtitle("Total Number of Steps Taken Each Day with replaced values")
